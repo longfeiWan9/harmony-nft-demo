@@ -1,4 +1,4 @@
-import './App.css';
+import './assets/App.css';
 import WalletConnect from './components/WalletConnect'
 import MintNFT from './components/MintNFT';
 import nftStorageLogo from "./assets/nftStorage.svg";

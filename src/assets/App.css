@@ -7,7 +7,13 @@
   pointer-events: none;
 }
 .harmony, .nftStorage{
-  padding: 1em;
+  padding: 2em 1em 1em 1em;
+  height: 100px;
+}
+
+.NFTImg{
+  height: 200px;
+  background-color: "white";
 }
 
 @media (prefers-reduced-motion: no-preference) {
