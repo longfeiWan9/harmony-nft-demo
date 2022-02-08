@@ -3,14 +3,14 @@
 This example will include the process of creating a simple NFT demo on Harmony Testnet, using NFT.Storage to store off-chain NFT data on IPFS and Filecoin to achieve the total decentralization of your NFT.
 
 
-#### What's incldued in this example:
+### What's incldued in this example:
 
 + HRC721/NFT smart contract
 + Connecting to Harmony blockchain via MetaMask
 + Uploading NFT assets via NFT.Storage
 + Invoking NFT smart contract to mint NFT via MetaMask
 
-#### Pre-requirement
+### Pre-requirement
 This example requires basic knowledge about harmony blockchain, HRC721/ERC721, Truffle and MetaMask. Before you start this tutorial, make sure you have installed the necessary tools.
 
 + Node.js
@@ -18,7 +18,7 @@ This example requires basic knowledge about harmony blockchain, HRC721/ERC721, T
 + Metamask browser extension fill with Harmony TestNet Token (ONE)
 + [NFT.Storage](https://nft.storage/) Account for API key
 
-#### Quick Start
+### Quick Start
 
 1. Clone Project
 
