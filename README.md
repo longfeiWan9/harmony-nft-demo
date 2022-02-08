@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Harmony NFT Example
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This example will include the process of creating a simple NFT demo on Harmony Testnet, using NFT.Storage to store off-chain NFT data on IPFS and Filecoin to achieve the total decentralization of your NFT.
 
-## Available Scripts
 
-In the project directory, you can run:
+#### What's incldued in this example:
 
-### `npm start`
++ HRC721/NFT smart contract
++ Connecting to Harmony blockchain via MetaMask
++ Uploading NFT assets via NFT.Storage
++ Invoking NFT smart contract to mint NFT via MetaMask
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Pre-requirement
+This example requires basic knowledge about harmony blockchain, HRC721/ERC721, Truffle and MetaMask. Before you start this tutorial, make sure you have installed the necessary tools.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
++ Node.js
++ Truffle
++ Metamask browser extension fill with Harmony TestNet Token (ONE)
++ [NFT.Storage](https://nft.storage/) Account for API key
 
-### `npm test`
+#### Quick Start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone Project
 
-### `npm run build`
+   ```shell
+   git clone https://github.com/longfeiWan9/harmony-nft-demo.git
+   cd harmony-nft-demo
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Modify the smart contract `contracts\HarmonyNFT.sol` according to your preference.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```solidity
+   //Deply EPC721 with name and description specified.
+   constructor() ERC721 ("ETH on Harmony using NFT.Storage", "HNFT-L") {}
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Export you Harmony wallet private key and add it into `truffle-config.js` for smart contract deployment
 
-### `npm run eject`
+   ```javascript
+   const privateKeyTest = '<HARMONY-WALLET-PRIVATE-KEY>';
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Install the dependencies.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```shel
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Compile and deploy your smart contract
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```shell
+   truffle deploy --network harmonyTestnet
+   ```
 
-## Learn More
+   copy the deployed smart contract address to `src\components\MintNFT.js`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```javascript
+   const nftContractAddress = '<YOUR-NFT-SMART-CONTRACT-ADDRESS>';
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. Get an NFT.Storage API key from  [NFT.Storage](https://nft.storage/) and add it in `src\components\MintNFT.js`
 
-### Code Splitting
+   ```javascript
+   const APIKEY = '<YOUR-NFTSTORAGE-API-KEY>';
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+7. Start the front end and try it out
 
-### Analyzing the Bundle Size
+   ```shell
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
